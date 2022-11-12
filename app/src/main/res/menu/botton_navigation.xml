@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fristFragment"
+        android:icon="@android:drawable/ic_input_add"
+        android:title="Peliculas"
+        />
+    <item
+        android:id="@+id/secondFragment"
+        android:icon="?android:attr/actionModeFindDrawable"
+        android:title="buscar"
+        />
+    <item
+        android:id="@+id/thirdFragment"
+        android:icon="@android:drawable/ic_lock_idle_alarm"
+        android:title="Alquiler"
+        />
+    <item
+        android:id="@+id/forFragment"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="cuenta"
+        />
+</menu>
