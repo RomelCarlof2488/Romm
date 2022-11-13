@@ -3,10 +3,13 @@ package com.example.romm;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +17,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class ForFragment extends Fragment {
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -55,10 +59,26 @@ public class ForFragment extends Fragment {
         }
     }
 
+    private  Button btnAdd;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_for, container, false);
+        super.onCreate(savedInstanceState);
+        View root = inflater.inflate(R.layout.fragment_for, container, false);
+
+        btnAdd = root.findViewById(R.id.btnAdd);
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.frame_container, AddPeli.class,null);
+                transaction.commit();
+            }
+        });
+
+        return root;
     }
 }
